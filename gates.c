@@ -54,9 +54,9 @@ int main (void)
     float eps = 1e-1;   // Small value for gradient approx
     float rate = 1e-1;  // Learning rate
 
-    for(size_t i = 0; i < 1000; ++i){
+    for(size_t i = 0; i < 50000; ++i){
         float c = cost(w1, w2); 
-        printf("w1 = %f, w2 = %f, c = %f\n", w1, w2, c);
+        //printf("w1 = %f, w2 = %f, c = %f\n", w1, w2, c);
         float dw1 = (cost(w1 + eps, w2) - c)/eps;   // Derivative
         float dw2 = (cost(w1, w2 + eps) - c)/eps;
         w1 -= rate*dw1; // Update gradient descent
